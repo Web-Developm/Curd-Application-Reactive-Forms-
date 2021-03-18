@@ -1,0 +1,126 @@
+<div class="jumbotron-fluid top" id="top">
+    <h1 id="title" class="text-center text-white">
+        Crud Application <i class="fas fa-spinner fa-pulse"></i>
+    </h1>
+
+    <p id="d" class="text-white text-center"> {{today | date:"full"}}</p>
+</div>
+
+<div class="container-fluid" id="table">
+    <br />
+    <br />
+
+    <input type="search" class="form-control" placeholder="Search"  /><br /><br />
+
+    <div class="card">
+        <div class="card-header bg-dark text-white">
+            <h2 class="card-title text-center">List of Employees</h2>
+        </div>
+
+        <div class="card-body text-center">
+            <table class="table table-responsive table-bordered table-hover text-center">
+                <thead class="bg-dark text-white">
+                    <tr>
+                        <th><i class="fas fa-id-card"></i> Id</th>
+                        <th><i class="fas fa-1x fa-fw fa-user"></i>Employee Name</th>
+                        <th><i class="fas fa-1x fa-fw fa-money-bill"></i> Salary</th>
+                        <th><i class="fas fa-people-carry"></i> Age</th>
+                        <th><i class="fas fa-fw fa-1x fa-user-edit"></i></th>
+                        <th><i class="fas fa-fw fa-1x fa-user-times"></i></th>
+                    </tr>
+                </thead>
+
+                <tbody *ngFor="let info of data1; let i = index; let k = index">
+                    <tr>
+                        <td>{{ info.id.value }}</td>
+                        <td [ngStyle]="{ fontWeight: 'bold' }">
+                            {{ info.name.value | uppercase }}
+                        </td>
+                        <td>{{ info.salary.value }}</td>
+                        <td>{{ info.age.value }}</td>
+                        <td>
+                            <button type="button" id="date" class="btn btn-outline-dark" (click)="update1(info, k)">
+                                <i class="fas fa-edit"></i>
+                            </button>
+                        </td>
+                        <td>
+                            <button type="button" id="date" class="btn btn-outline-dark" (click)="del(i)">
+                                <i class="fas fa-1x fa-fw fa-trash-alt"></i>
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div class="container" id="form">
+    <img src="\assets\5e535c46519705265ba6fc80_peep-91.png" width="auto" height="150px">
+    <h2 class="text-center"><i class="fas fa-users"></i> Add User</h2>
+    <br />
+    <p class="man">*Fields mandatory</p>
+
+    <form  [formGroup]="data" id="form">
+
+        <div class="form-group">
+            <label><i class="far fa-1x fa-fw fa-id-card"></i> Id
+                <span class="required">*</span>
+            </label>
+            <input type="text" class="form-control" name="id" id="id" formControlName="id"   placeholder="Id"/>
+        </div>
+
+        <div class="form-group">
+            <label><i class="fas fa-1x fa-fw fa-user"></i> Employee Name
+                <span class="required">*</span></label>
+            <br />
+            <input type="text" class="form-control" name="name" id="name" formControlName="name"  placeholder="Name"
+                required />
+        </div>
+
+        <div class="form-group">
+            <label><i class="fas fa-1x fa-fw fa-money-bill"></i> Salary
+                <span class="required">*</span></label>
+            <input type="text" class="form-control" name="salary" id="salary" formControlName="salary" placeholder="Salary"
+                required />
+        </div>
+
+        <div class="form-group">
+            <label><i class="fas fa-people-carry"></i> Age
+                <span class="required">*</span></label>
+            <input type="text" class="form-control" name="age" id="age" formControlName="age"  placeholder="Age" required />
+        </div>
+
+        <div class="text-center d-grid gap-2">
+            <!--<button *ngIf="!buttondisabled" (click)="buttondisabled= true">Disable Button</button>
+
+            <button *ngIf="buttondisabled" (click)="buttondisabled= false">Enable Button</button>-->
+
+            <button (click)="add()" type="button" [disabled]="click1"  class="sub btn btn-outline">
+                <i class="fas fa-hourglass-half fa-spin" name="add" id="add"></i> Add
+            </button>
+
+            <!--<ul *ngFor="let info1 of data; let j=index">
+                    <li>{{info1.id}}</li>
+                    <button (click)="find(j,info1)" type="button" class="btn btn-outline">hello</button>
+                </ul>-->
+        </div>
+
+        <div class="text-center d-grid gap-2">
+            <button  (click)="update2()" type="button" [disabled]="click2"  class="sub btn btn-outline">
+                <i class="fas fa-fw fa-check-circle" name="update" id="update"></i>Update
+            </button>
+        </div>
+    </form>
+</div>
+
+<!--<div class="container-fluid">
+    <img class="images rounded mx-auto d-block" src="\assets\qrcode_localhost.png" />
+</div>-->
+
+<br />
+<br />
+<br />
+<br />
+<br />
+
