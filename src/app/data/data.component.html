@@ -30,14 +30,14 @@
                     </tr>
                 </thead>
 
-                <tbody *ngFor="let info of data1; let i = index; let k = index">
+                <tbody *ngFor="let info of data; let i = index; let k = index">
                     <tr>
-                        <td>{{ info.id.value }}</td>
+                        <td>{{ info.id }}</td>
                         <td [ngStyle]="{ fontWeight: 'bold' }">
-                            {{ info.name.value | uppercase }}
+                            {{ info.name}}
                         </td>
-                        <td>{{ info.salary.value }}</td>
-                        <td>{{ info.age.value }}</td>
+                        <td>{{ info.salary }}</td>
+                        <td>{{ info.age }}</td>
                         <td>
                             <button type="button" id="date" class="btn btn-outline-dark" (click)="update1(info, k)">
                                 <i class="fas fa-edit"></i>
@@ -61,13 +61,13 @@
     <br />
     <p class="man">*Fields mandatory</p>
 
-    <form  [formGroup]="data" id="form">
+    <form  [formGroup]="sample" id="form">
 
         <div class="form-group">
             <label><i class="far fa-1x fa-fw fa-id-card"></i> Id
                 <span class="required">*</span>
             </label>
-            <input type="text" class="form-control" name="id" id="id" formControlName="id"   placeholder="Id"/>
+            <input type="text" class="form-control" name="id" id="id" formControlName="id"  placeholder="Id"/>
         </div>
 
         <div class="form-group">
@@ -88,7 +88,7 @@
         <div class="form-group">
             <label><i class="fas fa-people-carry"></i> Age
                 <span class="required">*</span></label>
-            <input type="text" class="form-control" name="age" id="age" formControlName="age"  placeholder="Age" required />
+            <input type="text" class="form-control" name="age" id="age" formControlName="age" placeholder="Age" required />
         </div>
 
         <div class="text-center d-grid gap-2">
@@ -105,6 +105,8 @@
                     <button (click)="find(j,info1)" type="button" class="btn btn-outline">hello</button>
                 </ul>-->
         </div>
+
+        
 
         <div class="text-center d-grid gap-2">
             <button  (click)="update2()" type="button" [disabled]="click2"  class="sub btn btn-outline">
