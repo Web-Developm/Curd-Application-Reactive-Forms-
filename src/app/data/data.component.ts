@@ -1,5 +1,6 @@
+import { variable } from '@angular/compiler/src/output/output_ast';
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
 //import { threadId } from 'node:worker_threads';
 //import { FormBuilder } from '@angular/forms';
 
@@ -10,7 +11,9 @@ import { FormGroup, FormControl } from '@angular/forms';
 })
 export class DataComponent implements OnInit {
 
-  constructor() { }
+  constructor(private fb: FormBuilder) {
+    this.vali();
+   }
 
   ngOnInit(): void {
 
@@ -18,13 +21,23 @@ export class DataComponent implements OnInit {
 
   today: number = Date.now(); // Date
 
-  sample = new FormGroup({
-    id: new FormControl(''),
-    name: new FormControl(''),
-    salary: new FormControl(''),
-    age: new FormControl(''),
+  sample = this.fb.group({
+    id: ['', Validators.required],
+    name: ['', Validators.required],
+    salary: ['', Validators.required],
+    age: ['', Validators.required]
 
   })
+
+  vali = (): any => {
+
+    
+  }
+
+  
+
+
+
 
   public data: Array<{ id: number; name: string; salary: number; age: number; }> = [];
 
@@ -73,6 +86,8 @@ export class DataComponent implements OnInit {
     this.sample.controls['salary'].get=info.salary;
     this.sample.controls['age'].get=info.age;*/
 
+
+
     this.sample.setValue({
       id: info.id,
       name: info.name,
@@ -109,6 +124,7 @@ export class DataComponent implements OnInit {
       alert('We stopped the delete');
     }
   };
+
 
 
 
