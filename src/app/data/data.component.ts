@@ -23,18 +23,18 @@ export class DataComponent implements OnInit {
       [Validators.required,
       Validators.minLength(4)]
     ),
-    name: new FormControl('', [
-      Validators.required,
+    name: new FormControl('',
+      [Validators.required,
       Validators.minLength(4)
-    ]),
-    salary: new FormControl('', [
-      Validators.required,
+      ]),
+    salary: new FormControl('',
+      [Validators.required,
       Validators.minLength(4)
-    ]),
-    age: new FormControl('', [
-      Validators.required,
+      ]),
+    age: new FormControl('',
+      [Validators.required,
       Validators.minLength(2)
-    ])
+      ])
   });
 
 
