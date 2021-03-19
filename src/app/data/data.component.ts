@@ -1,8 +1,7 @@
 import { variable } from '@angular/compiler/src/output/output_ast';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
-//import { threadId } from 'node:worker_threads';
-//import { FormBuilder } from '@angular/forms';
+
 
 @Component({
   selector: 'app-data',
@@ -12,29 +11,50 @@ import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms'
 export class DataComponent implements OnInit {
 
   constructor(private fb: FormBuilder) {
-    this.vali();
-   }
+
+  }
 
   ngOnInit(): void {
 
   }
 
+  sample = new FormGroup({
+    id: new FormControl('',
+      [Validators.required,
+      Validators.minLength(4)]
+    ),
+    name: new FormControl('', [
+      Validators.required,
+      Validators.minLength(4)
+    ]),
+    salary: new FormControl('', [
+      Validators.required,
+      Validators.minLength(4)
+    ]),
+    age: new FormControl('', [
+      Validators.required,
+      Validators.minLength(2)
+    ])
+  });
+
+
+
   today: number = Date.now(); // Date
 
-  sample = this.fb.group({
+  /*sample = this.fb.group({
     id: ['', Validators.required],
     name: ['', Validators.required],
     salary: ['', Validators.required],
     age: ['', Validators.required]
 
-  })
+  })*/
 
   vali = (): any => {
 
-    
+
   }
 
-  
+
 
 
 
@@ -55,7 +75,7 @@ export class DataComponent implements OnInit {
     });
 
     this.click1 = this.click1; //enable
-    this.reset();
+    //this.reset();
 
 
 

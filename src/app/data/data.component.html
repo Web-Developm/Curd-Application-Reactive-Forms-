@@ -10,7 +10,7 @@
     <br />
     <br />
 
-    <input type="search" class="form-control" placeholder="Search"  /><br /><br />
+    <input type="search" class="form-control" placeholder="Search" /><br /><br />
 
     <div class="card">
         <div class="card-header bg-dark text-white">
@@ -61,46 +61,88 @@
     <br />
     <p class="man">*Fields mandatory</p>
 
-    <form  [formGroup]="sample" id="form">
+    <form [formGroup]="sample" #data1="ngForm" id="form">
 
-        <div class="form-group">
-            <label><i class="far fa-1x fa-fw fa-id-card"></i> Id
-                <span class="required">*</span>
-            </label>
-            <input type="text" class="form-control" name="id" id="id" formControlName="id"   placeholder="Id"/>
-            <span class="text-danger" *ngIf="sample.touched && !sample.valid">Id Required</span>
+        <div [hidden]="data1.submitted">
+
+            <div class="cross-validation"
+                [class.cross-validation-error]="sample.errors?.identityReavealed && (sample.touched || sample.dirty)">
+
+                <div class="form-group">
+                    <label><i class="far fa-1x fa-fw fa-id-card"></i> Id
+                        <span class="required">*</span>
+                    </label>
+                    <input type="text" class="form-control" name="id" id="id" formControlName="id" placeholder="Id"
+                        required>
+                    <!--<span class="text-danger" *ngIf="sample.touched && !sample.valid">Id Required</span>-->
+
+                    <div *ngIf="sample.controls['id'].invalid  && (sample.controls['id'].dirty || sample.controls['id'].touched)" class="alert alert-danger">
+                        
+                        <!--<div *ngIf="sample.controls['id'].errors.required">
+                            Id required
+                        </div>-->
+
+                        <!--<div *ngIf="sample.controls['id'].errors.minlength">
+                            Id must be at leaat 4 characters long
+                        </div>-->
+                    </div>
+
+                    
+                </div>
+
+                <div class="form-group">
+                    <label><i class="fas fa-1x fa-fw fa-user"></i> Employee Name
+                        <span class="required">*</span></label>
+                    <br />
+                    <input type="text" class="form-control" name="name" id="name" formControlName="name"
+                        placeholder="Name" required />
+                    <!--<span class="text-danger" *ngIf="sample.touched && !sample.valid">Name required</span>-->
+
+                    <div *ngIf="sample.controls['name'].invalid && (sample.controls['name'].dirty || sample.controls['name'].touched)" class="alert alert-danger">
+                        Name required
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label><i class="fas fa-1x fa-fw fa-money-bill"></i> Salary
+                        <span class="required">*</span></label>
+                    <input type="text" class="form-control" name="salary" id="salary" formControlName="salary"
+                        placeholder="Salary" required />
+                    <!--<span class="text-danger" *ngIf="sample.touched && !sample.valid">Salary required</span>-->
+
+                    <div *ngIf="sample.controls['salary'].invalid && (sample.controls['salary'].dirty || sample.controls['salary'].touched)" class="alert alert-danger">
+                        Salary required
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label><i class="fas fa-people-carry"></i> Age
+                        <span class="required">*</span></label>
+                    <input type="text" class="form-control" name="age" id="age" formControlName="age" placeholder="Age"
+                        required />
+                    <!--<span class="text-danger" *ngIf="sample.touched && !sample.valid">Age required</span>-->
+
+                    <div *ngIf="sample.controls['age'].invalid && (sample.controls['age'].dirty || sample.controls['age'].touched)" class="alert alert-danger">
+                        Age required
+                    </div>
+
+
+                </div>
+
+            </div>
+
         </div>
 
-        <div class="form-group">
-            <label><i class="fas fa-1x fa-fw fa-user"></i> Employee Name
-                <span class="required">*</span></label>
-            <br />
-            <input type="text" class="form-control" name="name" id="name" formControlName="name"  placeholder="Name"
-                required />
-                <span class="text-danger" *ngIf="sample.touched && !sample.valid">Name required</span>
-        </div>
 
-        <div class="form-group">
-            <label><i class="fas fa-1x fa-fw fa-money-bill"></i> Salary
-                <span class="required">*</span></label>
-            <input type="text" class="form-control" name="salary" id="salary" formControlName="salary" placeholder="Salary"
-                required />
-                <span class="text-danger" *ngIf="sample.touched && !sample.valid">Salary required</span>
-        </div>
 
-        <div class="form-group">
-            <label><i class="fas fa-people-carry"></i> Age
-                <span class="required">*</span></label>
-            <input type="text" class="form-control" name="age" id="age" formControlName="age" placeholder="Age" required />
-            <span class="text-danger" *ngIf="sample.touched && !sample.valid">Age required</span>
-         </div>
+
 
         <div class="text-center d-grid gap-2">
             <!--<button *ngIf="!buttondisabled" (click)="buttondisabled= true">Disable Button</button>
 
             <button *ngIf="buttondisabled" (click)="buttondisabled= false">Enable Button</button>-->
 
-            <button (click)="add()" type="button" [disabled]="!sample.valid"  class="sub btn btn-outline">
+            <button (click)="add()" type="button" [disabled]="sample.valid" class="sub btn btn-outline">
                 <i class="fas fa-hourglass-half fa-spin" name="add" id="add"></i> Add
             </button>
 
@@ -110,10 +152,10 @@
                 </ul>-->
         </div>
 
-        
+
 
         <div class="text-center d-grid gap-2">
-            <button  (click)="update2()" type="button" [disabled]="click2"  class="sub btn btn-outline">
+            <button (click)="update2()" type="button" [disabled]="click2" class="sub btn btn-outline">
                 <i class="fas fa-fw fa-check-circle" name="update" id="update"></i>Update
             </button>
         </div>
@@ -129,4 +171,3 @@
 <br />
 <br />
 <br />
-
