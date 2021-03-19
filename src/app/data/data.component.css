@@ -259,4 +259,7 @@
   /*input.ng-touched.ng-invalid{
     border:5px solid #f39189;
   }*/
-  
+
+  .cross-validation-error{
+    border-left:2px solid red;
+  }  
