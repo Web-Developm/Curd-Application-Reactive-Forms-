@@ -14,8 +14,7 @@
                         </div>
 
                         <div class="col-sm-4">
-                            <input type="text" id="fname" name="fname" class="form-control" 
-                                formControlName="fname" />
+                            <input type="text" id="fname" name="fname" class="form-control" formControlName="fname" />
 
                             <div class="alert"
                                 *ngIf="data.controls['fname'].hasError('required') && data.controls['fname'].touched">
@@ -35,8 +34,7 @@
                             <p><i class="fas fa-fw fa-1x fa-user-alt"></i> Last Name</p>
                         </div>
                         <div class="col-sm-4">
-                            <input type="text" id="lname" name="lname" class="form-control" 
-                                formControlName="lname" />
+                            <input type="text" id="lname" name="lname" class="form-control" formControlName="lname" />
                             <div class="alert"
                                 *ngIf="data.controls['lname'].hasError('required') && data.controls['lname'].touched">
                                 <i class="fas fa-fw fa-1x fa-exclamation-circle"></i> Last Name Required
@@ -76,8 +74,8 @@
 
                         <div class="col-sm-4">
                             <div class="input-group">
-                                <input type="email" id="email" name="email" class="form-control"
-                                    formControlName="email" aria-describedby="add" />
+                                <input type="email" id="email" name="email" class="form-control" formControlName="email"
+                                    aria-describedby="add" />
                                 <span class="input-group-text" id="add">@example.com</span>
 
 
@@ -107,7 +105,7 @@
                         </div>
 
                         <div class="col-sm-4">
-                            <input type="password" id="password" name="password" class="form-control" 
+                            <input type="password" id="password" name="password" class="form-control"
                                 formControlName="password" />
 
 
@@ -135,8 +133,8 @@
                         </div>
 
                         <div class="col-sm-4">
-                            <input  type="password" id="cpassword" name="cpassword" class="form-control"
-                                 formControlName="cpassword" />
+                            <input type="password" id="cpassword" name="cpassword" class="form-control"
+                                formControlName="cpassword" />
 
 
 
@@ -152,23 +150,13 @@
                                 <i class="fas fa-1x fa-fw fa-skull-crossbones"></i> Confirm Password 4 characters
                             </div>
 
-                            <div [ngStyle]="{'color':'red'}" *ngIf="data.controls['password'].value != data.controls['cpassword'].value;">Password Not Match</div>
-                            
-
-                            
-
-
+                            <div [ngStyle]="{'color':'red'}"
+                                *ngIf="data.controls['password'].value != data.controls['cpassword'].value;">Password
+                                Not Match</div>
 
 
                         </div>
-
-
-
-
                     </div>
-
-
-
 
 
                     <div class="row mt-4">
@@ -176,8 +164,7 @@
                             <p><i class="fas fa-fw fa-1x fa-calendar-alt"></i> Date of birth</p>
                         </div>
                         <div class="col-sm-4">
-                            <input type="date" id="date" name="date" class="form-control" 
-                                formControlName="date" />
+                            <input type="date" id="date" name="date" class="form-control" formControlName="date" />
                             <div class="alert"
                                 *ngIf="data.controls['date'].hasError('required') && data.controls['date'].touched">
                                 <i class="fas fa-fw fa-1x fa-exclamation-circle"></i> Date or birth required
@@ -213,8 +200,7 @@
                         </div>
 
                         <div class="col-sm-4">
-                            <input type="tel" id="phone" name="phone" class="form-control" 
-                                formControlName="phone" />
+                            <input type="tel" id="phone" name="phone" class="form-control" formControlName="phone" />
                             <div class="alert"
                                 *ngIf="data.controls['phone'].hasError('required') && data.controls['phone'].touched">
                                 <i class="fas fa-1x fa-fw fa-exclamation-circle"></i> Phone number required
@@ -235,7 +221,7 @@
                         </div>
 
                         <div class="col-sm-4">
-                            <input type="text" id="number" name="number" class="form-control" 
+                            <input type="text" id="number" name="number" class="form-control"
                                 formControlName="address" />
                             <div class="alert"
                                 *ngIf="data.controls['address'].hasError('required') && data.controls['address'].touched">
@@ -270,7 +256,8 @@
                         </div>
 
                         <div class="col-sm-3 d-grid gap-2">
-                            <button type="button" (click)="match()" [disabled]="!data.valid" class="btn btn-success">Submit</button>
+                            <button type="button" (click)="match()" [disabled]="!data.valid"
+                                class="btn btn-success">Submit</button>
                         </div>
                     </div>
 
