@@ -5,12 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DataComponent } from './data/data.component';
 import { ReactiveFormsModule,FormsModule } from '@angular/forms';
+import { ConditionalReactiveComponent } from './conditional-reactive/conditional-reactive.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    DataComponent
+    DataComponent,
+    ConditionalReactiveComponent
   ],
   imports: [
     BrowserModule,

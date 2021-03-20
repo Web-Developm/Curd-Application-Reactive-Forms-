@@ -87,14 +87,14 @@
                         </div>
                     </div>-->
 
-                    <div class="alert alert-danger" id="valid"
+                    <div class="alert" id="valid"
                         *ngIf="sample.controls['id'].hasError('required') && sample.controls['id'].touched">
-                        id required
+                        <i class="fas fa-fw fa-1x fa-exclamation-circle"></i> id required
                     </div>
 
-                    <div class="alert alert-danger" id="valid"
+                    <div class="alert" id="valid"
                         *ngIf="sample.controls['id'].hasError('minlength') && sample.controls['id'].touched">
-                        Id must be 4 characters
+                        <i class="fas fa-exclamation-triangle"></i> Id must be 4 characters
                     </div>
 
 
@@ -120,13 +120,13 @@
                     </div>-->
 
                     <div *ngIf="sample.controls['name'].hasError('required') && sample.controls['name'].touched"
-                        class="alert alert-danger" id="valid">
-                        Name required
+                        class="alert" id="valid">
+                        <i class="fas fa-fw fa-1x fa-exclamation-circle"></i> Name required
                     </div>
 
                     <div *ngIf="sample.controls['name'].hasError('minlength') && sample.controls['name'].touched"
-                        class="alert alert-danger" id="valid">
-                        Name must be 4 characters
+                        class="alert" id="valid">
+                        <i class="fas fa-exclamation-triangle"></i> Name must be 4 characters
                     </div>
                 </div>
 
@@ -150,13 +150,13 @@
                     </div>-->
 
                     <div *ngIf="sample.controls['salary'].hasError('required') && sample.controls['salary'].touched"
-                        class="alert alert-danger" id="valid">
-                        Salary required
+                        class="alert" id="valid">
+                        <i class="fas fa-fw fa-1x fa-exclamation-circle"></i> Salary required
                     </div>
 
                     <div *ngIf="sample.controls['salary'].hasError('minlength') && sample.controls['salary'].touched"
-                        class="alert alert-danger" id="valid">
-                        Salary must be 4 characters
+                        class="alert" id="valid">
+                        <i class="fas fa-exclamation-triangle"></i> Salary must be 4 characters
                     </div>
 
 
@@ -181,13 +181,13 @@
                     </div>-->
 
                     <div *ngIf="sample.controls['age'].hasError('required')&& sample.controls['age'].touched"
-                        class="alert alert-danger" id="valid">
-                        Age required
+                        class="alert" id="valid">
+                        <i class="fas fa-fw fa-1x fa-exclamation-circle"></i> Age required
                     </div>
 
                     <div *ngIf="sample.controls['age'].hasError('minlength') && sample.controls['age'].touched"
-                        class="alert alert-danger" id="valid">
-                        age muse be 2 characters
+                        class="alert " id="valid">
+                        <i class="fas fa-exclamation-triangle"></i> age muse be 2 characters
                     </div>
 
 

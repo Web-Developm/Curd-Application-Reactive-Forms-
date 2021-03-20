@@ -75,7 +75,7 @@ export class DataComponent implements OnInit {
     });
 
     this.click1 = this.click1; //enable
-    //this.reset();
+    this.reset();
 
 
 
@@ -85,10 +85,10 @@ export class DataComponent implements OnInit {
   reset() {
 
     this.sample.setValue({
-      id: "",
-      name: "",
-      salary: "",
-      age: ""
+      id:null,
+      name:null,
+      salary:null,
+      age:null
     })
 
   }
