@@ -65,8 +65,7 @@
 
         <div [hidden]="data1.submitted">
 
-            <div class="cross-validation"
-                [class.cross-validation-error]="sample.errors?.identityReavealed && (sample.touched || sample.dirty)">
+            
 
                 <div class="form-group">
                     <label><i class="far fa-1x fa-fw fa-id-card"></i> Id
@@ -88,12 +87,14 @@
                         </div>
                     </div>-->
 
-                    <div class="alert alert-danger" *ngIf="sample.controls['id'].hasError('required') && sample.controls['id'].touched">
+                    <div class="alert alert-danger" id="valid"
+                        *ngIf="sample.controls['id'].hasError('required') && sample.controls['id'].touched">
                         id required
                     </div>
 
-                    <div class="alert alert-danger" *ngIf="sample.controls['id'].hasError('minlength') && sample.controls['id'].touched">
-                        Id must be 4  characters
+                    <div class="alert alert-danger" id="valid"
+                        *ngIf="sample.controls['id'].hasError('minlength') && sample.controls['id'].touched">
+                        Id must be 4 characters
                     </div>
 
 
@@ -118,11 +119,13 @@
                         </div>
                     </div>-->
 
-                    <div *ngIf="sample.controls['name'].hasError('required') && sample.controls['name'].touched" class="alert alert-danger">
+                    <div *ngIf="sample.controls['name'].hasError('required') && sample.controls['name'].touched"
+                        class="alert alert-danger" id="valid">
                         Name required
                     </div>
 
-                    <div *ngIf="sample.controls['name'].hasError('minlength') && sample.controls['name'].touched" class="alert alert-danger">
+                    <div *ngIf="sample.controls['name'].hasError('minlength') && sample.controls['name'].touched"
+                        class="alert alert-danger" id="valid">
                         Name must be 4 characters
                     </div>
                 </div>
@@ -146,15 +149,17 @@
                         </div>
                     </div>-->
 
-                        <div *ngIf="sample.controls['salary'].hasError('required') && sample.controls['salary'].touched" class="alert alert-danger">
-                            Salary required
-                        </div>
+                    <div *ngIf="sample.controls['salary'].hasError('required') && sample.controls['salary'].touched"
+                        class="alert alert-danger" id="valid">
+                        Salary required
+                    </div>
 
-                        <div *ngIf="sample.controls['salary'].hasError('minlength') && sample.controls['salary'].touched" class="alert alert-danger">
-                            Salary must be 4 characters
-                        </div>
+                    <div *ngIf="sample.controls['salary'].hasError('minlength') && sample.controls['salary'].touched"
+                        class="alert alert-danger" id="valid">
+                        Salary must be 4 characters
+                    </div>
 
-                    
+
                 </div>
 
                 <div class="form-group">
@@ -175,18 +180,19 @@
                         </div>
                     </div>-->
 
-                    <div *ngIf="sample.controls['age'].hasError('required')&& sample.controls['age'].touched" class="alert alert-danger">
+                    <div *ngIf="sample.controls['age'].hasError('required')&& sample.controls['age'].touched"
+                        class="alert alert-danger" id="valid">
                         Age required
                     </div>
 
-                    <div *ngIf="sample.controls['age'].hasError('minlength') && sample.controls['age'].touched" class="alert alert-danger">
+                    <div *ngIf="sample.controls['age'].hasError('minlength') && sample.controls['age'].touched"
+                        class="alert alert-danger" id="valid">
                         age muse be 2 characters
                     </div>
 
 
                 </div>
 
-            </div>
 
         </div>
 
