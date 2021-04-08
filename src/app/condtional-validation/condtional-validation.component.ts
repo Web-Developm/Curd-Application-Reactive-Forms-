@@ -12,26 +12,25 @@ export class CondtionalValidationComponent implements OnInit {
 
   constructor() { }
 
-  data=new FormGroup({
-    user:new FormControl('',[Validators.required]),
-    email:new FormControl('',[Validators.required]),
-    password:new FormControl('',[Validators.required]),
-    cpassword:new FormControl('',[Validators.required]),
-    address:new FormGroup({
-      city:new FormControl('',[Validators.required]),
-      state:new FormControl('',[Validators.required]),
-      code:new FormControl('',[Validators.required])
+  data = new FormGroup({
+    user: new FormControl('', [Validators.required]),
+    email: new FormControl('', [Validators.required]),
+    password: new FormControl('', [Validators.required]),
+    cpassword: new FormControl('', [Validators.required]),
+    address: new FormGroup({
+      city: new FormControl('', [Validators.required]),
+      state: new FormControl('', [Validators.required]),
+      code: new FormControl('', [Validators.required])
     })
   })
 
-  display()
-  {
+  display() {
     console.log(this.data.value);
     this.data.reset();
   }
 
-  validationIn(val:string){
-return (this.data.controls.address as FormGroup).get(val)
+  validationIn(val: string) {
+    return (this.data.controls.address as FormGroup).get(val)
   }
 
 

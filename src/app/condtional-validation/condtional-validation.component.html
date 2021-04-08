@@ -59,14 +59,14 @@
         <input type="text" class="form-control" name="city" id="city" placeholder="City" formControlName="city">
         <label for="city">City</label>
 
-        <div class="alert alert-warning mt-2" *ngIf="(this.data.controls.address).get('city')?.valid || (this.data.controls.address).get('city')?.touched">
+        <!--<div class="alert alert-warning mt-2" *ngIf="(this.data.controls.address).get('city')?.invalid || (this.data.controls.address).get('city')?.untouched">
           city required
-        </div>
-
-        <!--<div [ngClass]="{'d-none':validationIn('city')?.valid || validationIn('city')?.untouched}">
-
-          <div class="alert" *ngIf="validationIn('city')?.errors">City required </div>
         </div>-->
+
+        <div [ngClass]="{'d-none':validationIn('city')?.valid || validationIn('city')?.untouched}">
+
+          <div class="alert alert-warning mt-2" *ngIf="validationIn('city')?.errors">City required </div>
+        </div>
 
       </div>
 
@@ -74,13 +74,11 @@
         <input type="text" class="form-control" name="state" id="state" placeholder="State" formControlName="state">
         <label for="state">State</label>
 
-        <div class="alert alert-warning mt-2" *ngIf="(this.data.controls.address).get('state')?.valid || (this.data.controls.address).get('state')?.touched">
-          State required
-        </div>
 
-        <!--<div [ngClass]="{'d-none':validationIn('state')?.valid || validationIn('state')?.untouched}">
-          <div class="alert" *ngIf="validationIn('state')?.errors">City required </div>
-        </div>-->
+
+        <div [ngClass]="{'d-none':validationIn('state')?.valid || validationIn('state')?.untouched}">
+          <div class="alert alert-warning mt-2" *ngIf="validationIn('state')?.errors">State required </div>
+        </div>
 
       </div>
 
@@ -88,8 +86,8 @@
         <input type="text" class="form-control" name="code" id="code" placeholder="Postal Code" formControlName="code">
         <label for="code">Postel Code</label>
 
-        <div class="alert alert-warning mt-2" *ngIf="(this.data.controls.address).get('code')?.valid || (this.data.controls.address).get('code')?.touched">
-          Postel Code required
+        <div [ngClass]="{'d-none':validationIn('code')?.valid || validationIn('code')?.untouched}">
+          <div class="alert alert-warning mt-2" *ngIf="validationIn('code')?.errors">Postel Code required</div>
         </div>
 
       </div>
