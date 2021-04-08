@@ -41,6 +41,8 @@ export class ConditionalReactiveComponent implements OnInit {
       phone: this.data.controls['phone'].value,
       address: this.data.controls['address'].value
     });
+
+    this.data.reset;
   }
 
 
