@@ -6,19 +6,23 @@ import { AppComponent } from './app.component';
 import { DataComponent } from './data/data.component';
 import { ReactiveFormsModule,FormsModule } from '@angular/forms';
 import { ConditionalReactiveComponent } from './conditional-reactive/conditional-reactive.component';
+import { CondtionalValidationComponent } from './condtional-validation/condtional-validation.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     DataComponent,
-    ConditionalReactiveComponent
+    ConditionalReactiveComponent,
+    CondtionalValidationComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

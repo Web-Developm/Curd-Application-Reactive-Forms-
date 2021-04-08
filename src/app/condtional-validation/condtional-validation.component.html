@@ -1,0 +1,105 @@
+<br>
+<br>
+
+<div class="container">
+
+  <p>{{data.value | json}}</p>
+
+  <form [formGroup]="data">
+
+    <div class="form-floating mb-3">
+      <input type="text" class="form-control" name="username" id="username" placeholder="Username"
+        formControlName="user">
+      <label for="username">User Name</label>
+
+      <div class="alert alert-warning mt-2"
+        *ngIf="data.controls['user'].hasError('required') && data.controls['user'].touched">
+        User Required
+      </div>
+    </div>
+
+    <div class="form-floating mb-3">
+      <input type="text" class="form-control" name="email1" id="email1" placeholder="email" formControlName="email">
+      <label for="email">Email</label>
+    </div>
+
+    <div class="form-check mb-3">
+      <input type="checkbox" class="form-check-input">
+      <label class="form-check-label">send me professional offers</label>
+    </div>
+
+    <div class="form-floating mb-3">
+      <input type="password" class="form-control" name="password" id="password" placeholder="Password"
+        formControlName="password" autocomplete="on">
+      <label for="password">Password</label>
+      <div class="alert alert-warning mt-2"
+        *ngIf="data.controls['password'].hasError('required') && data.controls['password'].touched">
+        Password required
+      </div>
+    </div>
+
+    <div class="form-floating mb-3">
+      <input type="password" class="form-control" name="confirm password" id="confirm password"
+        formControlName="cpassword" placeholder="Confirm Password" autocomplete="on">
+      <label for="confirm password">Confirm Password</label>
+
+      <div class="alert alert-warning mt-2"
+        *ngIf="data.controls['cpassword'].hasError('required') && data.controls['cpassword'].touched">
+        Confirm Password required
+      </div>
+
+      <div class="alert alert-warning" *ngIf="data.controls['password'].value != data.controls['cpassword'].value">Not
+        Matching</div>
+    </div>
+
+
+
+    <div formGroupName="address">
+      <div class="form-floating mb-3">
+        <input type="text" class="form-control" name="city" id="city" placeholder="City" formControlName="city">
+        <label for="city">City</label>
+
+        <div class="alert alert-warning mt-2" *ngIf="(this.data.controls.address).get('city')?.valid || (this.data.controls.address).get('city')?.touched">
+          city required
+        </div>
+
+        <!--<div [ngClass]="{'d-none':validationIn('city')?.valid || validationIn('city')?.untouched}">
+
+          <div class="alert" *ngIf="validationIn('city')?.errors">City required </div>
+        </div>-->
+
+      </div>
+
+      <div class="form-floating mb-3">
+        <input type="text" class="form-control" name="state" id="state" placeholder="State" formControlName="state">
+        <label for="state">State</label>
+
+        <div class="alert alert-warning mt-2" *ngIf="(this.data.controls.address).get('state')?.valid || (this.data.controls.address).get('state')?.touched">
+          State required
+        </div>
+
+        <!--<div [ngClass]="{'d-none':validationIn('state')?.valid || validationIn('state')?.untouched}">
+          <div class="alert" *ngIf="validationIn('state')?.errors">City required </div>
+        </div>-->
+
+      </div>
+
+      <div class="form-floating mb-3">
+        <input type="text" class="form-control" name="code" id="code" placeholder="Postal Code" formControlName="code">
+        <label for="code">Postel Code</label>
+
+        <div class="alert alert-warning mt-2" *ngIf="(this.data.controls.address).get('code')?.valid || (this.data.controls.address).get('code')?.touched">
+          Postel Code required
+        </div>
+
+      </div>
+    </div>
+
+
+
+    <div class="d-grid gap-2">
+      <button (click)="display()" [disabled]="!data.valid" type="button"
+        class="btn btn-outline-success">Submit</button>
+    </div>
+  </form>
+</div>
