@@ -1,0 +1,74 @@
+<br>
+<br>
+
+<div class="container">
+  <form [formGroup]="form" (ngSubmit)="onSubmit($event)">
+
+    <div class="form-floating mb-3">
+      <input type="email" id="email1" class="form-control" name="email1" placeholder="email1" formControlName="email">
+      <label for="email1">Email</label>
+      <div class="alert alert-warning mt-2" *ngIf="form.controls['email'].hasError('required') && form.controls['email'].touched">
+        Email required
+      </div>
+    </div>
+
+    <div class="form-floating mb-3">
+      <input type="text" id="username" class="form-control" name="username" placeholder="username"
+        formControlName="username" [ngClass]="{'form-submitted':formSubmitted}">
+      <label for="username">User Name</label>
+
+      <div class="alert alert-warning mt-2" *ngIf="form.controls['username'].hasError('required') && form.controls['username'].touched">
+        Username required
+      </div>
+
+    </div>
+
+    <div class="form-check form-check-inline">
+      <input type="radio" class="form-check-input" formControlName="userCategory" id="userCategory1" name="userCategory"
+        value="employee">
+      <label class="form-check-label" for="userCategory1">Employee</label>
+    </div>
+
+    <div class="form-check form-check-inline">
+      <input type="radio" class="form-check-input" formControlName="userCategory" id="userCategory2" name="userCategory"
+        value="student">
+      <label class="form-check-label" for="userCategory2">Student</label>
+    </div>
+
+    <div class="form-floating mt-2 mb-3">
+      <input type="text" class="form-control" id="institution" name="institution" formControlName="institution"
+        placeholder="Institution">
+      <label for="institution">Institution</label>
+
+      <div class="alert alert-warning mt-2" *ngIf="form.controls['institution'].hasError('required') && form.controls['institution'].touched">
+        Institution required
+      </div>
+
+    </div>
+
+    <div class="form-floating mb-3">
+      <input type="text" class="form-control" id="company" name="company" formControlName="company"
+        placeholder="company">
+      <label for="company">Company</label>
+      <div class="alert alert-warning mt-2" *ngIf="form.controls['company'].hasError('required') && form.controls['company'].touched">
+        Institution required
+      </div>
+
+    </div>
+
+    <div class="form-floating mb-3">
+      <input type="text" class="form-control" id="salary" name="salary" formControlName="salary" placeholder="salary">
+      <label for="salary">Salary</label>
+
+      <div class="alert alert-warning mt-2" *ngIf="form.controls['salary'].hasError('required') && form.controls['salary'].touched">
+        Salary required
+      </div>
+
+    </div>
+
+    <div class="d-grid gap-2">
+      <button (click)="display()" [disabled]="form.invalid" type="button" class="btn btn-outline-dark">Submit</button>
+    </div>
+
+  </form>
+</div>

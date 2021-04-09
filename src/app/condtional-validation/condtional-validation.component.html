@@ -48,7 +48,7 @@
         Confirm Password required
       </div>
 
-      <div class="alert alert-warning" *ngIf="data.controls['password'].value != data.controls['cpassword'].value">Not
+      <div class="alert alert-warning mt-2" *ngIf="data.controls['password'].value != data.controls['cpassword'].value">Not
         Matching</div>
     </div>
 
@@ -64,7 +64,6 @@
         </div>-->
 
         <div [ngClass]="{'d-none':validationIn('city')?.valid || validationIn('city')?.untouched}">
-
           <div class="alert alert-warning mt-2" *ngIf="validationIn('city')?.errors">City required </div>
         </div>
 
@@ -96,8 +95,7 @@
 
 
     <div class="d-grid gap-2">
-      <button (click)="display()" [disabled]="!data.valid" type="button"
-        class="btn btn-outline-success">Submit</button>
+      <button (click)="display()" [disabled]="data.invalid" type="button" class="btn btn-outline-success">Submit</button>
     </div>
   </form>
 </div>

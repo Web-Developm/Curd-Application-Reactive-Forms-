@@ -8,6 +8,7 @@ import { ReactiveFormsModule,FormsModule } from '@angular/forms';
 import { ConditionalReactiveComponent } from './conditional-reactive/conditional-reactive.component';
 import { CondtionalValidationComponent } from './condtional-validation/condtional-validation.component';
 import { HttpClientModule } from '@angular/common/http';
+import { UserConditionalComponent } from './user-conditional/user-conditional.component';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { HttpClientModule } from '@angular/common/http';
     AppComponent,
     DataComponent,
     ConditionalReactiveComponent,
-    CondtionalValidationComponent
+    CondtionalValidationComponent,
+    UserConditionalComponent
   ],
   imports: [
     BrowserModule,

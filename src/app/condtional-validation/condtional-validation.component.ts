@@ -10,11 +10,14 @@ import { HttpClient } from '@angular/common/http';
 })
 export class CondtionalValidationComponent implements OnInit {
 
-  constructor() { }
+
+
+  constructor(private fb: FormBuilder) { }
 
   data = new FormGroup({
     user: new FormControl('', [Validators.required]),
     email: new FormControl('', [Validators.required]),
+    subscribt: new FormControl([false]),
     password: new FormControl('', [Validators.required]),
     cpassword: new FormControl('', [Validators.required]),
     address: new FormGroup({
@@ -32,6 +35,7 @@ export class CondtionalValidationComponent implements OnInit {
   validationIn(val: string) {
     return (this.data.controls.address as FormGroup).get(val)
   }
+
 
 
   ngOnInit(): void {
