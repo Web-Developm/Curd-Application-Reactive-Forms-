@@ -51,7 +51,7 @@ export class UserConditionalComponent implements OnInit {
      const companyControl=this.form.get('company');
      const salaryControl=this.form.get('salary');
 
-     this.form.get('userCategory')?.valueChanges.subscribe(
+     this.form.get ('userCategory')?.valueChanges.subscribe(
        userCategory =>{
 
         if(userCategory=== 'student')
@@ -67,7 +67,7 @@ export class UserConditionalComponent implements OnInit {
           companyControl?.setValidators([Validators.required]);
           salaryControl?.setValidators([Validators.required]);
         }
-
+ 
         institutionControl?.updateValueAndValidity();
         companyControl?.updateValueAndValidity();
         salaryControl?.updateValueAndValidity();

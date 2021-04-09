@@ -13,9 +13,10 @@
     </div>
 
     <div class="form-floating mb-3">
+
       <input type="text" id="username" class="form-control" name="username" placeholder="username"
         formControlName="username" [ngClass]="{'form-submitted':formSubmitted}">
-      <label for="username">User Name</label>
+      <label for="username">   User Name</label>
 
       <div class="alert alert-warning mt-2" *ngIf="form.controls['username'].hasError('required') && form.controls['username'].touched">
         Username required
@@ -51,7 +52,7 @@
         placeholder="company">
       <label for="company">Company</label>
       <div class="alert alert-warning mt-2" *ngIf="form.controls['company'].hasError('required') && form.controls['company'].touched">
-        Institution required
+        Company required
       </div>
 
     </div>
@@ -72,3 +73,7 @@
 
   </form>
 </div>
+
+<br>
+<br>
+<br>
